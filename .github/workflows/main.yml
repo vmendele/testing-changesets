@@ -9,14 +9,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.x
-      - run: npm ci
-      - name: Create Release Pull Request or Publish
-        uses: changesets/action@v1
-        with:
-          publish: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
